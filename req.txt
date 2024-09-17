@@ -1,0 +1,5 @@
+fastapi[all]
+websockets
+wsproto
+uvicorn[standard]
+
