@@ -1,2 +1,4 @@
 .venv
 .idea
+Exceptions/__pycache__
+Exceptions/models/__pycache__

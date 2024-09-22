@@ -1,0 +1,1 @@
+print('init name', __name__)
