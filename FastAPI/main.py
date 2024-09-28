@@ -1,6 +1,8 @@
 from enum import Enum
+import json
 
-from fastapi import FastAPI
+import uvicorn
+from fastapi import FastAPI, Body
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -12,7 +14,9 @@ async def root():
 
 
 @app.post("/")
-async def post():
+async def post(data = Body()):
+    new_data = json.dumps(data)
+    print(f'data = {new_data}, type = {type(new_data)}, typedata = {type(data)}')
     return {"message": "hello from the post route"}
 
 
@@ -109,3 +113,7 @@ async def create_item_with_put(item_id: int, item: Item, q: str | None = None):
     if q:
         result.update({"q": q})
     return result
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=8000)
