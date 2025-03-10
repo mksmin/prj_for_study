@@ -2,9 +2,9 @@ import asyncio
 
 from datetime import datetime
 from functools import wraps
-from sqlalchemy import Integer, DateTime, String, Column, select, text, JSON, BigInteger
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
+from demo_sqlalchemy import Integer, DateTime, String, Column, select, text, JSON, BigInteger
+from demo_sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from demo_sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
 
 
 from config.config import get_tokens
